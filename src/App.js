@@ -1,23 +1,35 @@
-
-import Hero from './Hero'
-import './App.css';
-import './Incubator-Logo 1.png'
-import './Image.png'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Article from "./components/Article";
+import Home from "./components/Home";
+import Adv from "./components/Adv";
+import Feedback from "./components/Feedback";
+import Success from "./components/Success";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-  <Hero/>
+    <div
+      style={{
+        overflow: "hidden",
+        scrollBehavior: "smooth",
+      }}
+    >
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="/success" element={<Success />} />
+      </Routes>
+
+      <Footer />
+    </div>
   );
 }
 
 export default App;
-
-// function FontAwesomeIcon(){
-//   return(
-//     <div>
-//     <FontAwesomeIcon icon={faHamburger} />
-//   </div>
-//   )
-// }
-
-// export default FontAwesomeIcon;
